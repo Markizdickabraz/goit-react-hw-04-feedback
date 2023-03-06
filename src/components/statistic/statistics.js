@@ -9,7 +9,7 @@ export default function Statistics({ good, neutral, bad, total, positivePercenta
             <h2>Statistics</h2>
            {!total ?<Notification message="There is no feedback"></Notification>: <Stats>
         <li>Good:{good}</li>
-        <li>Nuetral:{neutral}</li>
+        <li>Neutral:{neutral}</li>
         <li>Bad:{bad}</li>
         <li>Total:{total}</li>
         <li>Positive feedback:{positivePercentage}%</li></Stats>} 
@@ -21,6 +21,6 @@ Statistics.prototype = {
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
-    total: PropTypes.number,
-    positivePercentage: PropTypes.number,
+    total: PropTypes.func,
+    positivePercentage: PropTypes.func,
 }

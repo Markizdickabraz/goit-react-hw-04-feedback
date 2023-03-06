@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
     return (
-    <List>
-        {options.map(optionItem => {return(
-            <li key = {optionItem}><Btn type="button" onClick={onLeaveFeedback}>{optionItem}  </Btn></li>
+    <List >
+            {options.map(optionItem => {
+
+             
+                return (
+                    <li key={Object.keys(optionItem)}><Btn type="button" name={Object.keys(optionItem)} onClick={onLeaveFeedback}>{Object.keys(optionItem)}  </Btn></li>
             )})}
             </List>
         )
